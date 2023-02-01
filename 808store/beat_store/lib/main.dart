@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './login_page.dart';
+import 'screens/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: "Inter",
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: const TextStyle(
-                fontFamily: "Inter",
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.bold,
                 fontSize: 50,
                 color: Colors.white,
               ),
