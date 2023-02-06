@@ -1,18 +1,16 @@
+import 'package:beat_store/components/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:beat_store/widgets/password.dart';
 
-class LogPage extends StatefulWidget {
-  const LogPage({super.key});
+class LogPage extends StatelessWidget {
+  logPage({super.key});
 
-  @override
-  State<LogPage> createState() => _LogPageState();
-}
+// text editing controllers
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
-class _LogPageState extends State<LogPage> {
-  late String _password;
-  final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +20,8 @@ class _LogPageState extends State<LogPage> {
           minimum: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              // Container(
-              //   height: 50,
-              //   width: 50,
-              //   child: FloatingActionButton(
-              //     elevation: 5,
-              //     onPressed: () {
-              //       Navigator.pop(context);
-              //     },
-              //     backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              //     child: const Icon(Icons.arrow_back_ios_new),
-              //   ),
-              // ),
+              
+              // Header
               Container(
                 margin:
                     const EdgeInsets.only(top: 15.0, bottom: 15.0, right: 60.0),
@@ -42,7 +30,10 @@ class _LogPageState extends State<LogPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              SizedBox(height: 30),
+
+              const SizedBox(height: 30),
+
+              // 2nd header
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -50,51 +41,17 @@ class _LogPageState extends State<LogPage> {
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-              SizedBox(
+              
+              const SizedBox(
                 height: 100,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(37),
-                  color: Color(0xFF333333),
-                ),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10.0),
-                        ),
-                        borderSide: BorderSide(
-                          width: 0,
-                          style: BorderStyle.none,
-                        ),
-                      ),
-                      hintText: 'Enter your email',
-                      hintStyle: Theme.of(context).textTheme.headline4),
-                ),
-              ),
+
+              // E-mail textfield
+              textField(controller: usernameController, hintText: 'Enter your email', obscureText: false),
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(37),
-                  color: Color(0xFF333333),
-                ),
-                child: PasswordField(
-                  fieldKey: _passwordFieldKey,
-                  onFieldSubmitted: (String value) {
-                    setState(
-                      () {
-                        _password = value;
-                      },
-                    );
-                  },
-                  hintText: "Enter your password",
-                  onSaved: (String? newValue) {},
-                  hintStyle: Theme.of(context).textTheme.headline4,
-                ),
-              ),
+              textField(controller: passwordController, hintText: "Enter your password", obscureText: true),
               const SizedBox(
                 height: 30,
               ),
