@@ -10,6 +10,8 @@ class welcomePage extends StatefulWidget {
 }
 
 class _welcomePageState extends State<welcomePage> {
+  get color => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class _welcomePageState extends State<welcomePage> {
                     const EdgeInsets.only(top: 15.0, bottom: 15.0, right: 60.0),
                 child: Text(
                   "Explore the sounds you've never heard.",
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               SizedBox(height: 30),
@@ -41,7 +43,7 @@ class _welcomePageState extends State<welcomePage> {
                 alignment: Alignment.topLeft,
                 child: Text(
                   "808store.",
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               SizedBox(height: 3),
@@ -54,6 +56,7 @@ class _welcomePageState extends State<welcomePage> {
               const SizedBox(height: 170),
               TextButton(
                 style: ButtonStyle(
+                  elevation: MaterialStateProperty.all(10),
                     minimumSize:
                         MaterialStateProperty.all(const Size.fromHeight(50)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -69,15 +72,16 @@ class _welcomePageState extends State<welcomePage> {
                 },
                 child: Text(
                   'Log in',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
               const SizedBox(height: 20),
               Text("First time here?",
                   style: Theme.of(context).textTheme.headline4),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextButton(
                 style: ButtonStyle(
+                  elevation: MaterialStateProperty.all(60),
                     fixedSize: MaterialStateProperty.all(
                       const Size(150, 50),
                     ),
@@ -93,7 +97,7 @@ class _welcomePageState extends State<welcomePage> {
                         Color.fromRGBO(26, 26, 26, 1))),
                 onPressed: () {},
                 child: Text('Sign up!',
-                    style: Theme.of(context).textTheme.headline5),
+                    style: Theme.of(context).textTheme.headlineSmall),
               ),
             ],
           ),
