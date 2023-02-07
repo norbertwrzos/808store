@@ -2,14 +2,15 @@ import 'package:beat_store/components/my_button.dart';
 import 'package:beat_store/components/square_tile.dart';
 import 'package:beat_store/components/text_field.dart';
 import 'package:flutter/material.dart';
-import './sign_in_page.dart';
+import './log_page.dart';
 
-class LogInPage extends StatelessWidget {
-  LogInPage({super.key});
+class SignInPage extends StatelessWidget {
+  SignInPage({super.key});
 
 // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  final passwordCofirmationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +25,12 @@ class LogInPage extends StatelessWidget {
                 margin:
                     const EdgeInsets.only(top: 15.0, bottom: 15.0, right: 60.0),
                 child: Text(
-                  "Welcome back, you've been missed!",
+                  "Let's create an account for you!",
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
 
-              const SizedBox(height: 60),
+              const SizedBox(height: 40),
 
               // E-mail textfield
               textField(
@@ -48,11 +49,21 @@ class LogInPage extends StatelessWidget {
                   obscureText: true),
 
               const SizedBox(
+                height: 10,
+              ),
+
+              // Password confirmation texfield
+              textField(
+                  controller: passwordCofirmationController,
+                  hintText: "Confirm your password",
+                  obscureText: true),
+
+              const SizedBox(
                 height: 30,
               ),
 
               //Log in button
-              MyButton(onPressed: () {}, text: "Log in"),
+              MyButton(onPressed: () {}, text: "Sign in"),
 
               const SizedBox(
                 height: 20,
@@ -109,7 +120,7 @@ class LogInPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Not a member?",
+                  Text("Already a member?",
                       style: TextStyle(
                         fontFamily: "Inter",
                         fontSize: 15,
@@ -119,7 +130,7 @@ class LogInPage extends StatelessWidget {
                   const SizedBox(width: 1),
                   TextButton(
                       child: const Text(
-                        "Register now",
+                        "Log in",
                         style: TextStyle(
                           fontFamily: "Inter",
                           fontSize: 15,
@@ -129,10 +140,10 @@ class LogInPage extends StatelessWidget {
                       onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignInPage()),
+                        MaterialPageRoute(builder: (context) => LogInPage()),
                       );
                     },
-              ),],
+              )],
               ),
             ],
           ),

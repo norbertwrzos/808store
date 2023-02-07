@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/welcome_page.dart';
+import 'screens/welcome_page.dart';
+import 'screens/log_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,10 +28,10 @@ class MyApp extends StatelessWidget {
               headline5: const TextStyle(
                 fontFamily: "Inter",
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: 18,
                 color: Colors.white,
               ),
-              // MAIN TEXT THEME
+              // 2nd TEXT THEME
               headline4: const TextStyle(
                 fontFamily: "Inter",
                 fontWeight: FontWeight.bold,
@@ -40,9 +42,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color.fromRGBO(188, 98, 255, 1),
           secondary: const Color.fromRGBO(26, 26, 26, 1),
+          outline: Color.fromARGB(186, 133, 133, 133),
         ),
       ),
-      home: welcomePage(),
+      home: WelcomePage(),
     );
   }
 }

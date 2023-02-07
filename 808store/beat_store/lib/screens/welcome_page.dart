@@ -1,16 +1,10 @@
 import 'dart:ui';
 import "./log_page.dart";
+import './sign_in_page.dart';
 import 'package:flutter/material.dart';
 
-class welcomePage extends StatefulWidget {
-  const welcomePage({super.key});
-
-  @override
-  State<welcomePage> createState() => _welcomePageState();
-}
-
-class _welcomePageState extends State<welcomePage> {
-  get color => null;
+class WelcomePage extends StatelessWidget {
+  WelcomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,50 +48,65 @@ class _welcomePageState extends State<welcomePage> {
                     style: Theme.of(context).textTheme.headline4),
               ),
               const SizedBox(height: 170),
-              TextButton(
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(10),
-                    minimumSize:
-                        MaterialStateProperty.all(const Size.fromHeight(50)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(37.0))),
-                    backgroundColor: MaterialStateProperty.all(
-                        const Color.fromRGBO(188, 98, 255, 1))),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LogPage()),
-                  );
-                },
-                child: Text(
-                  'Log in',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
-              ),
+              Card(
+                  elevation: 15,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(37)),
+                  child: TextButton(
+                    style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(10),
+                        minimumSize: MaterialStateProperty.all(
+                            const Size.fromHeight(50)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(37.0))),
+                        backgroundColor: MaterialStateProperty.all(
+                            const Color.fromRGBO(188, 98, 255, 1))),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LogInPage()),
+                      );
+                    },
+                    child: Text(
+                      'Log in',
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  )),
               const SizedBox(height: 20),
               Text("First time here?",
                   style: Theme.of(context).textTheme.headline4),
               const SizedBox(height: 15),
-              TextButton(
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(60),
-                    fixedSize: MaterialStateProperty.all(
-                      const Size(150, 50),
-                    ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        side: const BorderSide(
-                          color: Color.fromRGBO(193, 193, 193, 69),
-                        ),
-                        borderRadius: BorderRadius.circular(37.0),
+              Card(
+                elevation: 15,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(37)),
+                child: TextButton(
+                  style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(60),
+                      fixedSize: MaterialStateProperty.all(
+                        const Size(150, 50),
                       ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all(
-                        Color.fromRGBO(26, 26, 26, 1))),
-                onPressed: () {},
-                child: Text('Sign up!',
-                    style: Theme.of(context).textTheme.headlineSmall),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          side: const BorderSide(
+                            color: Color.fromRGBO(193, 193, 193, 69),
+                          ),
+                          borderRadius: BorderRadius.circular(37.0),
+                        ),
+                      ),
+                      backgroundColor: MaterialStateProperty.all(
+                          Color.fromRGBO(26, 26, 26, 1))),
+                  onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignInPage()),
+                      );
+                    },
+                  child: Text('Sign up!',
+                      style: Theme.of(context).textTheme.headlineSmall),
+                ),
               ),
             ],
           ),
