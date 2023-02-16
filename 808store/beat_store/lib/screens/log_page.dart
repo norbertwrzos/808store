@@ -1,6 +1,7 @@
 import 'package:beat_store/components/my_button.dart';
 import 'package:beat_store/components/square_tile.dart';
 import 'package:beat_store/components/text_field.dart';
+import 'package:beat_store/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import './sign_in_page.dart';
 
@@ -52,7 +53,12 @@ class LogInPage extends StatelessWidget {
               ),
 
               //Log in button
-              MyButton(onPressed: () {}, text: "Log in"),
+              MyButton(onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomePage()),
+                      );
+                    }, text: "Log in"),
 
               const SizedBox(
                 height: 20,

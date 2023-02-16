@@ -32,11 +32,11 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
               ),
               // 2nd TEXT THEME
-              headline4: const TextStyle(
+              headline4: TextStyle(
                 fontFamily: "Inter",
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
-                color: Color.fromRGBO(193, 193, 193, 60),
+                color: Colors.grey.shade700,
               ),
             ),
         colorScheme: ColorScheme.fromSwatch().copyWith(
