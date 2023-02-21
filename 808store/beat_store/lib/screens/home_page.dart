@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -36,25 +39,50 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              Container(
-                margin:
-                    const EdgeInsets.only(top: 15.0, right: 60.0),
-                child: Text(
-                  "Hello, User!",
-                  style: Theme.of(context).textTheme.headline6,
-                )
+              Column(
+                children: [
+                  Container(
+                      margin: const EdgeInsets.only(
+                          top: 15.0, right: 60),
+                      child: Text(
+                        "Hello, User!",
+                        style: Theme.of(context).textTheme.headline6,
+                      )),
+                  Container(
+                   
+                    margin: const EdgeInsets.only(
+                        top: 15.0, bottom: 15.0, right: 60),
+                    child: Text(
+                      "What are you looking for today?",
+                      style: TextStyle(
+                        fontFamily: "Inter",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.grey.shade700,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      SlideGestureButton(
+                        onPressed: () {},
+                        text: "Overview",
+                      ),
+                      const SizedBox(
+                        width: 2,
+                      ),
+                      SlideGestureButton(
+                        onPressed: () {},
+                        text: "All beats",
+                      )
+                    ],
+                  ),
+                  Text("Soundkits", style: Theme.of(context).textTheme.headline5,)
+                ],
               ),
-              const SizedBox(height: 10,),
-
-              Container(
-                margin:
-                    const EdgeInsets.only(top: 15.0, bottom: 15.0, right: 60.0),
-                child: Text(
-                  "What are you looking for today?",
-                  style: Theme.of(context).textTheme.headline5,
-                )
-              ),
-
             ],
           ),
         ),
