@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:beat_store/components/category_tile.dart';
 import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -20,11 +21,11 @@ class HomePage extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.only(top: 15, left: 15),
+                    padding: const EdgeInsets.only(top: 16),
                     child: Text("Home",
                         style: Theme.of(context).textTheme.headline4),
                   ),
-                  const SizedBox(width: 200),
+                  const SizedBox(width: 230),
                   const Icon(
                     Icons.shopping_cart,
                     color: Colors.white,
@@ -38,20 +39,20 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Column(
                 children: [
                   Container(
-                      margin: const EdgeInsets.only(
-                          top: 15.0, right: 60),
-                      child: Text(
-                        "Hello, User!",
-                        style: Theme.of(context).textTheme.headline6,
-                      )),
+                    alignment: Alignment.topLeft,
+                    margin: const EdgeInsets.only(top: 15.0, right: 60),
+                    child: Text(
+                      "Hello, User!",
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
                   Container(
-                   
-                    margin: const EdgeInsets.only(
-                        top: 15.0, bottom: 15.0, right: 60),
+                    alignment: Alignment.topLeft,
                     child: Text(
                       "What are you looking for today?",
                       style: TextStyle(
@@ -62,25 +63,38 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  const SizedBox(height: 20),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Row(
+                      children: [
+                        SlideGestureButton(
+                          onPressed: () {},
+                          text: "Overview",
+                        ),
+                        const SizedBox(
+                          width: 2,
+                        ),
+                        SlideGestureButton(
+                          onPressed: () {},
+                          text: "All beats",
+                        )
+                      ],
+                    ),
                   ),
-                  Row(
-                    children: [
-                      SlideGestureButton(
-                        onPressed: () {},
-                        text: "Overview",
-                      ),
-                      const SizedBox(
-                        width: 2,
-                      ),
-                      SlideGestureButton(
-                        onPressed: () {},
-                        text: "All beats",
-                      )
-                    ],
+                  const SizedBox(height: 30),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: const Text("Soundkits",
+                        style: TextStyle(
+                          fontFamily: "Inter",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28,
+                          color: Colors.white,
+                        )),
                   ),
-                  Text("Soundkits", style: Theme.of(context).textTheme.headline5,)
+                  SizedBox(height: 5),
+                  CategoryTile(imagePath: "assets\images\loginpage_photo.jpg", text: "Loopkits",)
                 ],
               ),
             ],

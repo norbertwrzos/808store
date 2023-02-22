@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class SlideGestureButton extends StatelessWidget {
@@ -13,23 +15,26 @@ class SlideGestureButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 50,
+      width: 140,
+      height: 45,
       child: Card(
         elevation: 15,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(37)),
         child: TextButton(
           style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all(const Size(150, 30)),
+              fixedSize: MaterialStateProperty.all(const Size(150, 20)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(37.0))),
+                      borderRadius: BorderRadius.circular(1.0))),
               backgroundColor: MaterialStateProperty.all(
                   const Color.fromRGBO(188, 98, 255, 1))),
           onPressed: onPressed,
           child: Text(
             text,
-            style: Theme.of(context).textTheme.headline5,
+            style: const TextStyle(fontFamily: "Inter",
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                color: Colors.white,)
           ),
         ),
       ),
