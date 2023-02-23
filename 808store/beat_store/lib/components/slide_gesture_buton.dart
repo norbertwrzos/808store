@@ -25,7 +25,7 @@ class SlideGestureButton extends StatelessWidget {
               fixedSize: MaterialStateProperty.all(const Size(150, 20)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(1.0))),
+                      borderRadius: BorderRadius.circular(37.0))),
               backgroundColor: MaterialStateProperty.all(
                   const Color.fromRGBO(188, 98, 255, 1))),
           onPressed: onPressed,

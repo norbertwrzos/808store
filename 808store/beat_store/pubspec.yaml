@@ -53,11 +53,13 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  uses-material-design: true
   assets:
     - assets/images/loginpage_photo.jpg
     - assets/images/google.png
     - assets/images/fb.png
+    - assets/images/loopkits.jpg
+    - assets/images/drumkits.jpg
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
