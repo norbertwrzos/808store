@@ -1,11 +1,5 @@
-import 'dart:ffi';
-
 import 'package:beat_store/components/category_tile.dart';
 import 'package:beat_store/components/slide_gesture_buton.dart';
-import 'package:beat_store/components/square_tile.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -97,15 +91,23 @@ class HomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   SizedBox(
-                    height: 175,
+                    height: 160,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: const [
-                        Expanded(flex: 1,child: CategoryTile(imagePath: "assets/images/loopkits.jpg" ,text: "Loopkits")),
+                        Expanded(
+                            flex: 1,
+                            child: CategoryTile(
+                                imagePath: "assets/images/loopkits.jpg",
+                                text: "Loopkits")),
                         SizedBox(
                           width: 20,
                         ),
-                        Expanded(flex: 1, child: CategoryTile(imagePath: "assets/images/drumkits.jpg" , text: "Drumkits"))
+                        Expanded(
+                            flex: 1,
+                            child: CategoryTile(
+                                imagePath: "assets/images/drumkits.jpg",
+                                text: "Drumkits"))
                       ],
                     ),
                   ),
@@ -121,23 +123,42 @@ class HomePage extends StatelessWidget {
                         )),
                   ),
                   const SizedBox(height: 5),
-                  SizedBox(
-                    height: 150,
-                    child: GridView(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      gridDelegate:
-                          const SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 200,
-                              childAspectRatio: 2 / 2,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 20),
-                      children: const[
-                        CategoryTile(imagePath: "assets/image/loginpage_photo.jpg",text: "Loopkits"),
-                        CategoryTile(imagePath: "assets/image/loginpage_photo.jpg",text: "Drumkits"),
-                      ],
+                  SingleChildScrollView(
+                    child: SizedBox(
+                      height: 160,
+                      child: Row(
+                        children: const [
+                          Expanded(
+                            flex: 1,
+                            child: CategoryTile(
+                                imagePath: "assets/images/supertrap.jpg",
+                                text: "Supertrap"),
+                          ),
+                          SizedBox(width: 20),
+                          Expanded(
+                              flex: 1,
+                              child: CategoryTile(
+                                  imagePath: "assets/images/4pf.jpg", text: "4PF"))
+                        ],
+                      ),
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: const [
+                      Expanded(
+                        flex: 1,
+                        child: CategoryTile(
+                            imagePath: "assets/images/jersey.jpg",
+                            text: "Supertrap"),
+                      ),
+                      SizedBox(width: 20),
+                      Expanded(
+                          flex: 1,
+                          child: CategoryTile(
+                              imagePath: "assets/images/808mafia.jpg", text: "4PF"))
+                    ],
+                  ),
                 ],
               ),
             ],

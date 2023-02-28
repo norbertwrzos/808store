@@ -12,14 +12,13 @@ class CategoryTile extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(37)),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).colorScheme.outline),
           borderRadius: BorderRadius.circular(16),
           color: const Color.fromARGB(255, 37, 37, 37),
           image: DecorationImage(
             image: AssetImage(imagePath),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.8),
+              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.8),
               BlendMode.darken,
             ),
           ),
@@ -28,7 +27,7 @@ class CategoryTile extends StatelessWidget {
           children: [
             Container(
                 alignment: Alignment.bottomCenter,
-                padding: const EdgeInsets.only(bottom: 15),
+                padding: const EdgeInsets.only(top:100 ,bottom: 15),
                 child:
                     Text(text, style: Theme.of(context).textTheme.headline5)),
           ],
