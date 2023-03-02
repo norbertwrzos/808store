@@ -33,7 +33,7 @@ class SignInPage extends StatelessWidget {
               const SizedBox(height: 40),
 
               // E-mail textfield
-              textField(
+              MyTextField(
                   controller: usernameController,
                   hintText: 'E-mail',
                   obscureText: false),
@@ -43,7 +43,7 @@ class SignInPage extends StatelessWidget {
               ),
 
               // Password texfield
-              textField(
+              MyTextField(
                   controller: passwordController,
                   hintText: "Password",
                   obscureText: true),
@@ -53,7 +53,7 @@ class SignInPage extends StatelessWidget {
               ),
 
               // Password confirmation texfield
-              textField(
+              MyTextField(
                   controller: passwordCofirmationController,
                   hintText: "Confirm your password",
                   obscureText: true),

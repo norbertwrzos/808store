@@ -33,7 +33,7 @@ class LogInPage extends StatelessWidget {
               const SizedBox(height: 60),
 
               // E-mail textfield
-              textField(
+              MyTextField(
                   controller: usernameController,
                   hintText: 'E-mail',
                   obscureText: false),
@@ -43,7 +43,7 @@ class LogInPage extends StatelessWidget {
               ),
 
               // Password texfield
-              textField(
+              MyTextField(
                   controller: passwordController,
                   hintText: "Password",
                   obscureText: true),

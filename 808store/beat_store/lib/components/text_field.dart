@@ -2,12 +2,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 
-class textField extends StatelessWidget {
+class MyTextField extends StatelessWidget {
   final controller;
   final String hintText;
   final bool obscureText;
 
-  const textField({
+  const MyTextField({
     super.key,
     required this.controller,
     required this.hintText,

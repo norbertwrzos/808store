@@ -1,6 +1,9 @@
 import 'package:beat_store/components/category_tile.dart';
+import 'package:beat_store/components/navbar.dart';
 import 'package:beat_store/components/slide_gesture_buton.dart';
+import 'package:beat_store/screens/all_beats.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,33 +11,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: NavBar(),
       body: SingleChildScrollView(
         child: SafeArea(
           minimum: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: Text("Home",
-                        style: Theme.of(context).textTheme.headline4),
-                  ),
-                  const SizedBox(width: 230),
-                  const Icon(
-                    Icons.shopping_cart,
-                    color: Colors.white,
-                    size: 25,
-                  ),
-                  const SizedBox(width: 30),
-                  const Icon(
-                    Icons.person,
-                    color: Colors.white,
-                    size: 25,
-                  ),
-                ],
-              ),
               const SizedBox(height: 10),
               Column(
                 children: [
@@ -67,13 +50,23 @@ class HomePage extends StatelessWidget {
                         SlideGestureButton(
                           onPressed: () {},
                           text: "Overview",
+                          width: 140,
+                          height: 50,
                         ),
                         const SizedBox(
                           width: 2,
                         ),
                         SlideGestureButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AllBeats()),
+                            );
+                          },
                           text: "All beats",
+                          width: 140,
+                          height: 50,
                         )
                       ],
                     ),
@@ -123,41 +116,44 @@ class HomePage extends StatelessWidget {
                         )),
                   ),
                   const SizedBox(height: 5),
-                  SingleChildScrollView(
-                    child: SizedBox(
-                      height: 160,
-                      child: Row(
-                        children: const [
-                          Expanded(
+                  SizedBox(
+                    height: 160,
+                    child: Row(
+                      children: const [
+                        Expanded(
+                          flex: 1,
+                          child: CategoryTile(
+                              imagePath: "assets/images/supertrap.jpg",
+                              text: "Supertrap"),
+                        ),
+                        SizedBox(width: 20),
+                        Expanded(
                             flex: 1,
                             child: CategoryTile(
-                                imagePath: "assets/images/supertrap.jpg",
-                                text: "Supertrap"),
-                          ),
-                          SizedBox(width: 20),
-                          Expanded(
-                              flex: 1,
-                              child: CategoryTile(
-                                  imagePath: "assets/images/4pf.jpg", text: "4PF"))
-                        ],
-                      ),
+                                imagePath: "assets/images/4pf.jpg",
+                                text: "4PF"))
+                      ],
                     ),
                   ),
                   const SizedBox(height: 20),
-                  Row(
-                    children: const [
-                      Expanded(
-                        flex: 1,
-                        child: CategoryTile(
-                            imagePath: "assets/images/jersey.jpg",
-                            text: "Supertrap"),
-                      ),
-                      SizedBox(width: 20),
-                      Expanded(
+                  SizedBox(
+                    height: 160,
+                    child: Row(
+                      children: const [
+                        Expanded(
                           flex: 1,
                           child: CategoryTile(
-                              imagePath: "assets/images/808mafia.jpg", text: "4PF"))
-                    ],
+                              imagePath: "assets/images/jersey.jpg",
+                              text: "Supertrap"),
+                        ),
+                        SizedBox(width: 20),
+                        Expanded(
+                            flex: 1,
+                            child: CategoryTile(
+                                imagePath: "assets/images/808mafia.jpg",
+                                text: "808Mafia"))
+                      ],
+                    ),
                   ),
                 ],
               ),

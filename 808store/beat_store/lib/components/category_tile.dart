@@ -1,3 +1,4 @@
+import 'package:beat_store/screens/category_page.dart';
 import 'package:flutter/material.dart';
 
 class CategoryTile extends StatelessWidget {
@@ -10,28 +11,36 @@ class CategoryTile extends StatelessWidget {
     return Card(
       elevation: 30,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(37)),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: const Color.fromARGB(255, 37, 37, 37),
-          image: DecorationImage(
-            image: AssetImage(imagePath),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-              Theme.of(context).scaffoldBackgroundColor.withOpacity(0.8),
-              BlendMode.darken,
+      child: InkWell(
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: const Color.fromARGB(255, 37, 37, 37),
+            image: DecorationImage(
+              image: AssetImage(imagePath),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).scaffoldBackgroundColor.withOpacity(0.8),
+                BlendMode.darken,
+              ),
             ),
           ),
+          child: Column(
+            children: [
+              Container(
+                  alignment: Alignment.bottomCenter,
+                  padding: const EdgeInsets.only(top:100 ,bottom: 15),
+                  child:
+                      Text(text, style: Theme.of(context).textTheme.headline5)),
+            ],
+          ),
         ),
-        child: Column(
-          children: [
-            Container(
-                alignment: Alignment.bottomCenter,
-                padding: const EdgeInsets.only(top:100 ,bottom: 15),
-                child:
-                    Text(text, style: Theme.of(context).textTheme.headline5)),
-          ],
-        ),
+        onTap: () {
+          Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const CategoryPage()),
+                      );
+        },
       ),
     );
   }
