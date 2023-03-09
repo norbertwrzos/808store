@@ -20,7 +20,7 @@ class CategoryTile extends StatelessWidget {
               image: AssetImage(imagePath),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                Theme.of(context).scaffoldBackgroundColor.withOpacity(0.8),
+                Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
                 BlendMode.darken,
               ),
             ),
@@ -38,7 +38,7 @@ class CategoryTile extends StatelessWidget {
         onTap: () {
           Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const CategoryPage()),
+                        MaterialPageRoute(builder: (context) => CategoryPage(categoryName: text,)),
                       );
         },
       ),

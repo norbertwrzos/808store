@@ -1,4 +1,3 @@
-import 'package:beat_store/components/navbar.dart';
 import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:beat_store/components/text_field.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +9,6 @@ class AllBeats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: NavBar(),
         body: SingleChildScrollView(
           child: SafeArea(
             minimum: const EdgeInsets.all(16.0),

@@ -1,17 +1,21 @@
 import 'package:beat_store/components/category_tile.dart';
-import 'package:beat_store/components/navbar.dart';
 import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:beat_store/screens/all_beats.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: NavBar(),
       body: SingleChildScrollView(
         child: SafeArea(
           minimum: const EdgeInsets.all(16.0),
@@ -49,8 +53,8 @@ class HomePage extends StatelessWidget {
                       children: [
                         SlideGestureButton(
                           onPressed: () {},
-                          text: "Overview",
-                          width: 140,
+                          text: "See what's new!",
+                          width: 180,
                           height: 50,
                         ),
                         const SizedBox(
@@ -144,7 +148,7 @@ class HomePage extends StatelessWidget {
                           flex: 1,
                           child: CategoryTile(
                               imagePath: "assets/images/jersey.jpg",
-                              text: "Supertrap"),
+                              text: "Jersey Club"),
                         ),
                         SizedBox(width: 20),
                         Expanded(

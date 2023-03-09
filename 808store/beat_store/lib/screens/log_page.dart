@@ -2,6 +2,7 @@ import 'package:beat_store/components/my_button.dart';
 import 'package:beat_store/components/square_tile.dart';
 import 'package:beat_store/components/text_field.dart';
 import 'package:beat_store/screens/home_page.dart';
+import 'package:beat_store/screens/navbar.dart';
 import 'package:flutter/material.dart';
 import './sign_in_page.dart';
 
@@ -56,7 +57,7 @@ class LogInPage extends StatelessWidget {
               MyButton(onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const HomePage()),
+                        MaterialPageRoute(builder: (context) => const NavBar()),
                       );
                     }, text: "Log in"),
 
