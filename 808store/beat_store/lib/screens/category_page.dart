@@ -2,6 +2,8 @@ import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:beat_store/components/text_field.dart';
 import 'package:flutter/material.dart';
 
+import '../components/icon_button.dart';
+
 class CategoryPage extends StatelessWidget {
   CategoryPage({super.key, required this.categoryName});
   final searchController = TextEditingController();
@@ -36,24 +38,35 @@ class CategoryPage extends StatelessWidget {
                   hintText: "Enter a Keyword (BPM, Tag or name)",
                   obscureText: false),
               const SizedBox(height: 10),
-              Row(
-                children: [
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: SlideGestureButton(
-                          width: 100,
-                          height: 50,
-                          text: "Filter",
-                          onPressed: (() {}))),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: SlideGestureButton(
-                          width: 100,
-                          height: 50,
-                          text: "Sort",
-                          onPressed: (() {}))),
-                ],
-              ),
+          Row(
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: MyIconButton(
+                      height: 50,
+                      width: 120,
+                      myWidgetBuilder: () =>
+                          const Icon(Icons.tune, color: Colors.white),
+                      onPressed: (() {}))),
+              Expanded(
+                  flex: 1,
+                  child: MyIconButton(
+                      height: 50,
+                      width: 120,
+                      myWidgetBuilder: () =>
+                          const Icon(Icons.sort, color: Colors.white),
+                      onPressed: (() {}))),
+              Expanded(
+                  flex: 1,
+                  child: MyIconButton(
+                      height: 50,
+                      width: 120,
+                      myWidgetBuilder: () => const Icon(
+                          Icons.favorite_outline_rounded,
+                          color: Colors.white),
+                      onPressed: (() {}))),
+            ],
+          ),
             ]),
           ),
         ));
