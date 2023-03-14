@@ -8,14 +8,27 @@ class CategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Material(
       elevation: 30,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(37)),
+      
+      
       child: InkWell(
-        child: Container(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CategoryPage(
+                categoryName: text,
+              ),
+            ),
+          );
+        },
+        child: Ink(
           decoration: BoxDecoration(
+            color: Colors.transparent,
             borderRadius: BorderRadius.circular(16),
-            color: const Color.fromARGB(255, 37, 37, 37),
             image: DecorationImage(
               image: AssetImage(imagePath),
               fit: BoxFit.cover,
@@ -29,18 +42,12 @@ class CategoryTile extends StatelessWidget {
             children: [
               Container(
                   alignment: Alignment.bottomCenter,
-                  padding: const EdgeInsets.only(top:100 ,bottom: 15),
+                  padding: const EdgeInsets.only(top: 100, bottom: 15),
                   child:
                       Text(text, style: Theme.of(context).textTheme.headline5)),
             ],
           ),
         ),
-        onTap: () {
-          Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => CategoryPage(categoryName: text,)),
-                      );
-        },
       ),
     );
   }
