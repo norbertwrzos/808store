@@ -29,7 +29,7 @@ class _NavBarState extends State<NavBar> {
     HomePage(),
     AllBeats(),
     MyCart(),
-    UserPage(),
+    UserPage(userPhotoPath: "assets/images/loginpage_photo.jpg",userEmail: "musicgod@gmail.com", userName: "User"),
     SettingsPage()
   ];
 
