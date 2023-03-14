@@ -1,11 +1,30 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
+
 
 class MyCart extends StatelessWidget {
   const MyCart({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        body: SingleChildScrollView(
+            child: SafeArea(
+                minimum: const EdgeInsets.all(16.0),
+                child: Column(children: [
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 16),
+                      child: const Text(
+                        "My Cart",
+                        style: TextStyle(
+                          fontFamily: "Inter",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ])
+                ]))));
   }
 }
