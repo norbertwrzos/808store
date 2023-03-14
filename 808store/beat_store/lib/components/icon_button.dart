@@ -3,17 +3,18 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class MyIconButton extends StatelessWidget {
-  MyIconButton(
-      {super.key,
-      required this.onPressed,
-      required this.width,
-      required this.height,
-      required this.icontype});
+  MyIconButton({
+    super.key,
+    required this.onPressed,
+    required this.width,
+    required this.height,
+    required this.myWidgetBuilder,
+  });
 
   void Function()? onPressed;
   final double width;
   final double height;
-  final IconData icontype;
+  final Widget Function() myWidgetBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class MyIconButton extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(37)),
             child: TextButton(
-                child: Icon(icontype),
+                child: myWidgetBuilder(),
                 style: ButtonStyle(
                     fixedSize: MaterialStateProperty.all(const Size(150, 20)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(

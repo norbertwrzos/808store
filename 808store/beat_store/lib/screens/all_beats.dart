@@ -41,21 +41,28 @@ class AllBeats extends StatelessWidget {
             children: [
               Expanded(
                   flex: 1,
-                  child: IconButton(
-                      icon: Icon(Icons.filter_alt_outlined),
-                      color: Colors.white,
+                  child: MyIconButton(
+                      height: 50,
+                      width: 120,
+                      myWidgetBuilder: () =>
+                          const Icon(Icons.tune, color: Colors.white),
                       onPressed: (() {}))),
               Expanded(
                   flex: 1,
-                  child: IconButton(
-                      icon: Icon(Icons.sort),
-                      color: Colors.white,
+                  child: MyIconButton(
+                      height: 50,
+                      width: 120,
+                      myWidgetBuilder: () =>
+                          const Icon(Icons.sort, color: Colors.white),
                       onPressed: (() {}))),
               Expanded(
                   flex: 1,
-                  child: IconButton(
-                      icon: Icon(Icons.favorite_outline_outlined),
-                      color: Colors.white,
+                  child: MyIconButton(
+                      height: 50,
+                      width: 120,
+                      myWidgetBuilder: () => const Icon(
+                          Icons.favorite_outline_rounded,
+                          color: Colors.white),
                       onPressed: (() {}))),
             ],
           ),
