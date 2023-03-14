@@ -27,18 +27,21 @@ class SettingsContainer extends StatelessWidget {
         Material(
           elevation: 10,
           borderRadius: BorderRadius.circular(15),
-          child: Container(
-              width: double.infinity,
-              height: 60,
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.grey.shade800),
-              child: Row(children: [
-                Text(labelText, style: Theme.of(context).textTheme.headline5),
-                Spacer(),
-                myWidgetBuilder(),
-              ])),
+          child: InkWell(
+            onTap: () {},
+            child: Container(
+                width: double.infinity,
+                height: 60,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.grey.shade800),
+                child: Row(children: [
+                  Text(labelText, style: Theme.of(context).textTheme.headline5),
+                  Spacer(),
+                  myWidgetBuilder(),
+                ])),
+          ),
         ),
         SizedBox(
           height: 20,
