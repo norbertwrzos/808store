@@ -1,5 +1,8 @@
+import 'package:beat_store/components/beat_list_element.dart';
+
 import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:beat_store/components/text_field.dart';
+import 'package:beat_store/data/beats_data.dart';
 import 'package:flutter/material.dart';
 
 import '../components/icon_button.dart';
@@ -66,6 +69,23 @@ class AllBeats extends StatelessWidget {
                       onPressed: (() {}))),
             ],
           ),
+          SizedBox(height: 20),
+          Column(
+            children: [
+              SizedBox(
+                height: 500,
+                child: ListView(
+                  children: beatsData
+                      .map((bData) => BeatListElement(
+                          beatPhotoPath: bData.beatPhotoPath,
+                          beatTitle: bData.beatTitle,
+                          beatBPM: bData.beatBPM,
+                          beatScale: bData.beatScale))
+                      .toList(),
+                ),
+              )
+            ],
+          )
         ]),
       ),
     ));
