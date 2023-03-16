@@ -27,7 +27,7 @@ class SettingsContainer extends StatelessWidget {
         Material(
           elevation: 10,
             borderRadius: BorderRadius.circular(15),
-            color: Colors.grey.shade800,
+            color: Theme.of(context).colorScheme.background,
           child: InkWell(
             borderRadius: BorderRadius.circular(15),
             onTap: () {},
