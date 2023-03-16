@@ -1,3 +1,4 @@
+import 'package:beat_store/screens/beat_page.dart';
 import 'package:flutter/material.dart';
 
 class BeatListElement extends StatelessWidget {
@@ -22,7 +23,12 @@ class BeatListElement extends StatelessWidget {
         color: Theme.of(context).colorScheme.background,
         child: InkWell(
           borderRadius: BorderRadius.circular(15),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BeatPage()),
+            );
+          },
           child: Container(
             width: double.infinity,
             height: 100,
