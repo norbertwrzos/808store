@@ -16,7 +16,7 @@ class BeatListElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 12),
+      margin: const EdgeInsets.only(bottom: 12),
       child: Material(
         elevation: 10,
         borderRadius: BorderRadius.circular(15),
@@ -26,7 +26,7 @@ class BeatListElement extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BeatPage()),
+              MaterialPageRoute(builder: (context) => const BeatPage()),
             );
           },
           child: Container(
