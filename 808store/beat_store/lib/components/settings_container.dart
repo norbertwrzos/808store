@@ -23,7 +23,7 @@ class SettingsContainer extends StatelessWidget {
             Text(titleText, style: Theme.of(context).textTheme.headline4)
           ],
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Material(
           elevation: 10,
             borderRadius: BorderRadius.circular(15),
@@ -34,21 +34,21 @@ class SettingsContainer extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: 60,
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Row(
                 children: [
-                  Text(labelText, style: Theme.of(context).textTheme.headline5),
-                  Spacer(),
+                  Text(labelText, style: Theme.of(context).textTheme.headline3),
+                  const Spacer(),
                   myWidgetBuilder(),
                 ],
               ),
             ),
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
       ],
     );
   }
