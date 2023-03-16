@@ -66,6 +66,11 @@ flutter:
     - assets/images/4pf.jpg
     - assets/images/jersey.jpg
     - assets/images/808mafia.jpg
+    - assets/images/dom.jpg
+    - assets/images/destroy.jpg
+    - assets/images/ken.jpg
+    - assets/images/pop.jpg
+
 
     
   # An image asset can refer to one or more resolution-specific "variants", see
