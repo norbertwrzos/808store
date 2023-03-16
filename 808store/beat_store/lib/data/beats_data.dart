@@ -41,5 +41,5 @@ const beatsData = [
       beatPhotoPath: "assets/images/pop.jpg",
       beatTitle: "\"WOO\" - Pop Smoke Type Beat",
       beatBPM: "140 BPM",
-      beatScale: "C Min")
+      beatScale: "C Min"),
 ];

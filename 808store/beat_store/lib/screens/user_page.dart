@@ -74,7 +74,7 @@ class UserPage extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.grey.shade800),
+                      color: Theme.of(context).colorScheme.background),
                   child: Row(
                     children: [
                       Text(

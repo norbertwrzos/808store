@@ -39,11 +39,18 @@ class MyApp extends StatelessWidget {
                 fontSize: 16,
                 color: Colors.grey.shade700,
               ),
+              headline3: const TextStyle(
+                fontFamily: "Inter",
+                fontWeight: FontWeight.normal,
+                fontSize: 18,
+                color: Colors.white,
+              ),
             ),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color.fromRGBO(188, 98, 255, 1),
           secondary: const Color.fromRGBO(26, 26, 26, 1),
           outline: Color.fromARGB(186, 133, 133, 133),
+          background: Color.fromARGB(255, 37, 37, 37),
         ),
       ),
       home: WelcomePage(),
