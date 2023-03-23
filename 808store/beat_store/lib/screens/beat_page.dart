@@ -20,20 +20,20 @@ class BeatPage extends StatelessWidget {
           minimum: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Container(
-                  padding: const EdgeInsets.only(top: 16),
-                  child: Text(
-                    beatPageTitle,
-                    style: const TextStyle(
-                      fontFamily: "Inter",
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
-                      color: Colors.white,
-                    ),
+              Container(
+                padding: const EdgeInsets.only(top: 16),
+                child: Text(
+                  beatPageTitle,
+                  style: const TextStyle(
+                    fontFamily: "Inter",
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                    color: Colors.white,
                   ),
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
                 ),
-              ]),
+              ),
               const SizedBox(height: 20),
               SizedBox(
                   width: double.infinity,
