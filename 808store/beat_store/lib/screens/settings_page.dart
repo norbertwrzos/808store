@@ -10,20 +10,17 @@ class SettingsPage extends StatelessWidget {
             child: SafeArea(
                 minimum: const EdgeInsets.all(16.0),
                 child: Column(children: [
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  const SizedBox(height: 10),
+                  Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                     Container(
-                      padding: const EdgeInsets.only(top: 16),
-                      child: const Text(
+                      alignment: Alignment.topLeft,
+                      margin: const EdgeInsets.only(top: 15.0, right: 60),
+                      child: Text(
                         "Settings",
-                        style: TextStyle(
-                          fontFamily: "Inter",
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                          color: Colors.white,
-                        ),
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
-                  ])
+                  ]),
                 ]))));
   }
 }

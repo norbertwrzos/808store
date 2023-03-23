@@ -3,6 +3,7 @@ import 'package:beat_store/components/beat_list_element.dart';
 import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:beat_store/components/text_field.dart';
 import 'package:beat_store/data/beats_data.dart';
+import 'package:beat_store/screens/favorites_page.dart';
 import 'package:flutter/material.dart';
 
 import '../components/icon_button.dart';
@@ -18,17 +19,14 @@ class AllBeats extends StatelessWidget {
       child: SafeArea(
         minimum: const EdgeInsets.all(16.0),
         child: Column(children: [
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          const SizedBox(height: 10),
+          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
-              padding: const EdgeInsets.only(top: 16),
-              child: const Text(
+              alignment: Alignment.topLeft,
+              margin: const EdgeInsets.only(top: 15.0, right: 60),
+              child: Text(
                 "All beats",
-                style: TextStyle(
-                  fontFamily: "Inter",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
-                  color: Colors.white,
-                ),
+                style: Theme.of(context).textTheme.headline6,
               ),
             ),
           ]),
@@ -66,10 +64,15 @@ class AllBeats extends StatelessWidget {
                       myWidgetBuilder: () => const Icon(
                           Icons.favorite_outline_rounded,
                           color: Colors.white),
-                      onPressed: (() {}))),
+                      onPressed: (() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FavoritesPage()));
+                      }))),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Column(
             children: [
               SizedBox(
