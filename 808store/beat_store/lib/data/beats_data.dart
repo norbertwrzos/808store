@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:beat_store/components/beat_list_element.dart';
 
-const beatsData = [
+final beatsData = [
   BeatListElement(
       beatPhotoPath: "assets/images/4pf.jpg",
       beatTitle: "\"4PF\" - Lil Baby Type Beat",
@@ -37,7 +37,7 @@ const beatsData = [
       beatTitle: "\"X\" - Ken Carson Type Beat",
       beatBPM: "146 BPM",
       beatScale: "G Min"),
-      BeatListElement(
+  BeatListElement(
       beatPhotoPath: "assets/images/pop.jpg",
       beatTitle: "\"WOO\" - Pop Smoke Type Beat",
       beatBPM: "140 BPM",

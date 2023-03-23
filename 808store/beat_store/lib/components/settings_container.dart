@@ -8,10 +8,12 @@ class SettingsContainer extends StatelessWidget {
       {super.key,
       required this.titleText,
       required this.labelText,
-      required this.myWidgetBuilder});
+      required this.myWidgetBuilder,
+      required this.toNextPage});
   final String titleText;
   final String labelText;
   final Widget Function() myWidgetBuilder;
+  final Widget Function() toNextPage;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +28,14 @@ class SettingsContainer extends StatelessWidget {
         const SizedBox(height: 5),
         Material(
           elevation: 10,
-            borderRadius: BorderRadius.circular(15),
-            color: Theme.of(context).colorScheme.background,
+          borderRadius: BorderRadius.circular(15),
+          color: Theme.of(context).colorScheme.background,
           child: InkWell(
             borderRadius: BorderRadius.circular(15),
-            onTap: () {},
+            onTap: (() {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => toNextPage()));
+            }),
             child: Container(
               width: double.infinity,
               height: 60,

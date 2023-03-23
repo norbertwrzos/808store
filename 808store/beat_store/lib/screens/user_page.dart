@@ -38,63 +38,16 @@ class UserPage extends StatelessWidget {
                   onPressed: (() {}),
                   width: 150,
                   height: 50),
-              const SizedBox(height: 30),
-              SettingsContainer(
-                  titleText: "Purchases",
-                  labelText: "Purchase history",
-                  myWidgetBuilder: () =>
-                      const Icon(Icons.history, color: Colors.white)),
-              SettingsContainer(
-                  titleText: "Payment",
-                  labelText: "Payment method",
-                  myWidgetBuilder: () =>
-                      const Icon(Icons.payment_rounded, color: Colors.white)),
+              const SizedBox(height: 20),
               SettingsContainer(
                   titleText: "Invite link",
                   labelText: "Invite friends, get 10% off!",
-                  myWidgetBuilder: () =>
-                      const Icon(Icons.insert_link_rounded, color: Colors.white)),
-              SettingsContainer(
-                  titleText: "Notifications",
-                  labelText: "Turn on notifications",
-                  myWidgetBuilder: () => const MySwitch()),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Log out", style: Theme.of(context).textTheme.headline4)
-                ],
-              ),
-              const SizedBox(height: 5),
-              Material(
-                elevation: 10,
-                borderRadius: BorderRadius.circular(15),
-                child: Container(
-                  width: double.infinity,
-                  height: 60,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Theme.of(context).colorScheme.background),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Log out",
-                        style: TextStyle(
-                          fontFamily: "Inter",
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: Colors.red.shade800,
-                        ),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.logout,
-                        color: Colors.red.shade800,
-                      )
-                    ],
-                  ),
-                ),
-              ),
+                  toNextPage: (() => UserPage(
+                      userPhotoPath: userPhotoPath,
+                      userName: userName,
+                      userEmail: userEmail)),
+                  myWidgetBuilder: () => const Icon(Icons.insert_link_rounded,
+                      color: Colors.white)),
             ],
           ),
         ),

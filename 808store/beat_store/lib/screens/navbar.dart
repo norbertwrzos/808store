@@ -7,7 +7,7 @@ import 'all_beats.dart';
 import 'home_page.dart';
 import 'my_cart.dart';
 import 'settings_page.dart';
-import 'user_page.dart';
+
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -26,11 +26,10 @@ class _NavBarState extends State<NavBar> {
   }
 
   final List<Widget> _screens = [
-    HomePage(),
+    const HomePage(),
     AllBeats(),
-    MyCart(),
-    UserPage(userPhotoPath: "assets/images/loginpage_photo.jpg",userEmail: "musicgod@gmail.com", userName: "User"),
-    SettingsPage()
+    const MyCart(),
+    const SettingsPage()
   ];
 
   @override
@@ -59,10 +58,6 @@ class _NavBarState extends State<NavBar> {
             GButton(
               icon: Icons.shopping_cart_outlined,
               text: "My Cart",
-            ),
-            GButton(
-              icon: Icons.person,
-              text: "My Account",
             ),
             GButton(
               icon: Icons.settings,
