@@ -1,10 +1,10 @@
 import 'dart:ui';
 import "./log_page.dart";
-import './sign_in_page.dart';
+import 'register_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
-  WelcomePage({Key? key}) : super(key: key);
+  const WelcomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,12 +62,7 @@ class WelcomePage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(37.0))),
                         backgroundColor: MaterialStateProperty.all(
                             const Color.fromRGBO(188, 98, 255, 1))),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LogInPage()),
-                      );
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Log in',
                       style: Theme.of(context).textTheme.headlineSmall,
@@ -97,12 +92,7 @@ class WelcomePage extends StatelessWidget {
                       ),
                       backgroundColor: MaterialStateProperty.all(
                           Color.fromRGBO(26, 26, 26, 1))),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignInPage()),
-                    );
-                  },
+                  onPressed: () {},
                   child: Text('Sign up!',
                       style: Theme.of(context).textTheme.headlineSmall),
                 ),

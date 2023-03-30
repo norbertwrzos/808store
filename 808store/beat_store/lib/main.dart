@@ -1,4 +1,4 @@
-import 'package:beat_store/main_page.dart';
+import 'package:beat_store/auth/main_page.dart';
 import 'package:flutter/material.dart';
 import 'screens/welcome_page.dart';
 import 'screens/welcome_page.dart';

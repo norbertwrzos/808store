@@ -5,10 +5,11 @@ import 'package:beat_store/screens/home_page.dart';
 import 'package:beat_store/screens/navbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import './sign_in_page.dart';
+import 'register_page.dart';
 
 class LogInPage extends StatefulWidget {
-  const LogInPage({Key? key}) : super(key: key);
+  final VoidCallback showRegisterPage;
+  const LogInPage({Key? key, required this.showRegisterPage}) : super(key: key);
 
   @override
   State<LogInPage> createState() => _LogInPageState();
@@ -142,19 +143,16 @@ class _LogInPageState extends State<LogInPage> {
                         color: Colors.grey.shade700,
                       )),
                   const SizedBox(width: 1),
-                  TextButton(
-                    child: const Text(
-                      "Register now",
-                      style: TextStyle(
-                        fontFamily: "Inter",
-                        fontSize: 15,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    onPressed: () {
-                      logIn();
-                    },
-                  ),
+                  GestureDetector(
+                      onTap: widget.showRegisterPage,
+                      child: const Text(
+                        "Register now",
+                        style: TextStyle(
+                          fontFamily: "Inter",
+                          fontSize: 15,
+                          color: Colors.blue,
+                        ),
+                      )),
                 ],
               ),
             ],
