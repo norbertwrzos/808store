@@ -2,9 +2,8 @@ import 'package:beat_store/screens/beat_page.dart';
 import 'package:flutter/material.dart';
 
 class BeatListElement extends StatelessWidget {
-BeatListElement(
-      {super.key,
-      required this.beatPhotoPath,
+  BeatListElement(
+      {required this.beatPhotoPath,
       required this.beatTitle,
       required this.beatBPM,
       required this.beatScale});
@@ -26,7 +25,12 @@ BeatListElement(
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BeatPage(beatPagePhotoPath: beatPhotoPath, beatPageTitle: beatTitle, beatPageBPM: beatBPM, beatPageScale: beatScale)),
+              MaterialPageRoute(
+                  builder: (context) => BeatPage(
+                      beatPagePhotoPath: beatPhotoPath,
+                      beatPageTitle: beatTitle,
+                      beatPageBPM: beatBPM,
+                      beatPageScale: beatScale)),
             );
           },
           child: Container(

@@ -7,8 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class UserPage extends StatelessWidget {
   UserPage(
-      {super.key,
-      required this.userPhotoPath,
+      {required this.userPhotoPath,
       required this.userName,
       required this.userEmail});
   String userPhotoPath;

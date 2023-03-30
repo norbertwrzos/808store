@@ -10,7 +10,7 @@ import 'settings_page.dart';
 
 
 class NavBar extends StatefulWidget {
-  const NavBar({super.key});
+  const NavBar({Key? key}) : super(key: key);
 
   @override
   State<NavBar> createState() => _NavBarState();

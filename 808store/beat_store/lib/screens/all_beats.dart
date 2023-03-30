@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import '../components/icon_button.dart';
 
 class AllBeats extends StatelessWidget {
-  AllBeats({super.key});
+  AllBeats({Key? key}) : super(key: key);
   final searchController = TextEditingController();
 
   @override

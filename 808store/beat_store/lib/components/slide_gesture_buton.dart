@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class SlideGestureButton extends StatelessWidget {
   SlideGestureButton(
-      {super.key,
+      {
       required this.text,
       required this.onPressed,
       required this.width,

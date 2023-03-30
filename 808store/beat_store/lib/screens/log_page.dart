@@ -3,15 +3,34 @@ import 'package:beat_store/components/square_tile.dart';
 import 'package:beat_store/components/text_field.dart';
 import 'package:beat_store/screens/home_page.dart';
 import 'package:beat_store/screens/navbar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import './sign_in_page.dart';
 
-class LogInPage extends StatelessWidget {
-  LogInPage({super.key});
+class LogInPage extends StatefulWidget {
+  const LogInPage({Key? key}) : super(key: key);
 
+  @override
+  State<LogInPage> createState() => _LogInPageState();
+}
+
+class _LogInPageState extends State<LogInPage> {
 // text editing controllers
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future logIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim());
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +54,7 @@ class LogInPage extends StatelessWidget {
 
               // E-mail textfield
               MyTextField(
-                  controller: usernameController,
+                  controller: _emailController,
                   hintText: 'E-mail',
                   obscureText: false),
 
@@ -45,7 +64,7 @@ class LogInPage extends StatelessWidget {
 
               // Password texfield
               MyTextField(
-                  controller: passwordController,
+                  controller: _passwordController,
                   hintText: "Password",
                   obscureText: true),
 
@@ -54,12 +73,11 @@ class LogInPage extends StatelessWidget {
               ),
 
               //Log in button
-              MyButton(onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const NavBar()),
-                      );
-                    }, text: "Log in"),
+              MyButton(
+                  onPressed: () {
+                    logIn();
+                  },
+                  text: "Log in"),
 
               const SizedBox(
                 height: 20,
@@ -125,21 +143,19 @@ class LogInPage extends StatelessWidget {
                       )),
                   const SizedBox(width: 1),
                   TextButton(
-                      child: const Text(
-                        "Register now",
-                        style: TextStyle(
-                          fontFamily: "Inter",
-                          fontSize: 15,
-                          color: Colors.blue,
-                        ),
+                    child: const Text(
+                      "Register now",
+                      style: TextStyle(
+                        fontFamily: "Inter",
+                        fontSize: 15,
+                        color: Colors.blue,
                       ),
-                      onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignInPage()),
-                      );
+                    ),
+                    onPressed: () {
+                      logIn();
                     },
-              ),],
+                  ),
+                ],
               ),
             ],
           ),

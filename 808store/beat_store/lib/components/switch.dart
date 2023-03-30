@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class MySwitch extends StatefulWidget {
-  const MySwitch({super.key});
+  const MySwitch({Key? key}) : super(key: key);
 
   @override
   State<MySwitch> createState() => _MySwitchState();

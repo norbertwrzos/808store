@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class SettingsContainer extends StatelessWidget {
   const SettingsContainer(
-      {super.key,
+      {
       required this.titleText,
       required this.labelText,
       required this.myWidgetBuilder,

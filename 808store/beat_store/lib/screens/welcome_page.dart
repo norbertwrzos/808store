@@ -4,8 +4,7 @@ import './sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
-  WelcomePage({super.key});
-
+  WelcomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,11 +98,11 @@ class WelcomePage extends StatelessWidget {
                       backgroundColor: MaterialStateProperty.all(
                           Color.fromRGBO(26, 26, 26, 1))),
                   onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignInPage()),
-                      );
-                    },
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignInPage()),
+                    );
+                  },
                   child: Text('Sign up!',
                       style: Theme.of(context).textTheme.headlineSmall),
                 ),

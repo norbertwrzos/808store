@@ -1,18 +1,18 @@
 import 'package:beat_store/components/category_tile.dart';
 import 'package:beat_store/components/slide_gesture_buton.dart';
 import 'package:beat_store/screens/all_beats.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment.topLeft,
                     margin: const EdgeInsets.only(top: 15.0, right: 60),
                     child: Text(
-                      "Hello, User!",
+                      "Hello, " + user.email!,
                       style: Theme.of(context).textTheme.headline6,
                     ),
                   ),

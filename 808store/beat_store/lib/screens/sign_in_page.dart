@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import './log_page.dart';
 
 class SignInPage extends StatelessWidget {
-  SignInPage({super.key});
-
+  SignInPage({Key? key}) : super(key: key);
 // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();

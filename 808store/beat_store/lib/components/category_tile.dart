@@ -4,15 +4,13 @@ import 'package:flutter/material.dart';
 class CategoryTile extends StatelessWidget {
   final String imagePath;
   final String text;
-  const CategoryTile({super.key, required this.imagePath, required this.text});
+  const CategoryTile({required this.imagePath, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Material(
       elevation: 30,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(37)),
-      
-      
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
         onTap: () {

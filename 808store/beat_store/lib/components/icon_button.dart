@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class MyIconButton extends StatelessWidget {
   MyIconButton({
-    super.key,
     required this.onPressed,
     required this.width,
     required this.height,

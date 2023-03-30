@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../components/icon_button.dart';
 
 class CategoryPage extends StatelessWidget {
-  CategoryPage({super.key, required this.categoryName});
+  CategoryPage({required this.categoryName});
   final searchController = TextEditingController();
   final String categoryName;
 
@@ -13,31 +13,31 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-          child: SafeArea(
-            minimum: const EdgeInsets.all(16.0),
-            child: Column(children: [
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Container(
-                  padding: const EdgeInsets.only(top: 16),
-                  child: Text(
-                    categoryName,
-                    style: const TextStyle(
-                      fontFamily: "Inter",
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
-                      color: Colors.white,
-                    ),
-                  ),
+      child: SafeArea(
+        minimum: const EdgeInsets.all(16.0),
+        child: Column(children: [
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Container(
+              padding: const EdgeInsets.only(top: 16),
+              child: Text(
+                categoryName,
+                style: const TextStyle(
+                  fontFamily: "Inter",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.white,
                 ),
-              ]),
-              const SizedBox(
-                height: 20,
               ),
-              MyTextField(
-                  controller: searchController,
-                  hintText: "Enter a Keyword (BPM, Tag or name)",
-                  obscureText: false),
-              const SizedBox(height: 10),
+            ),
+          ]),
+          const SizedBox(
+            height: 20,
+          ),
+          MyTextField(
+              controller: searchController,
+              hintText: "Enter a Keyword (BPM, Tag or name)",
+              obscureText: false),
+          const SizedBox(height: 10),
           Row(
             children: [
               Expanded(
@@ -67,8 +67,8 @@ class CategoryPage extends StatelessWidget {
                       onPressed: (() {}))),
             ],
           ),
-            ]),
-          ),
-        ));
+        ]),
+      ),
+    ));
   }
 }
