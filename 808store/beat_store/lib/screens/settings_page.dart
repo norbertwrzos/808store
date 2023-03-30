@@ -1,13 +1,13 @@
 import 'package:beat_store/screens/my_cart.dart';
 import 'package:beat_store/screens/user_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../components/settings_container.dart';
 import '../components/switch.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
-
+  const SettingsPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +32,9 @@ class SettingsPage extends StatelessWidget {
                         titleText: "User",
                         labelText: "Edit my profile",
                         toNextPage: (() => UserPage(
-                      userPhotoPath: "assets/images/dom.jpg",
-                      userName: "User",
-                      userEmail: "user@email.pl")),
+                            userPhotoPath: "assets/images/dom.jpg",
+                            userName: "User",
+                            userEmail: "user@email.pl")),
                         myWidgetBuilder: () =>
                             const Icon(Icons.person, color: Colors.white)),
                     SettingsContainer(
@@ -63,35 +63,41 @@ class SettingsPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Material(
-                      elevation: 10,
-                      borderRadius: BorderRadius.circular(15),
-                      child: Container(
-                        width: double.infinity,
-                        height: 60,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Theme.of(context).colorScheme.background),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Log out",
-                              style: TextStyle(
-                                fontFamily: "Inter",
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: Colors.red.shade800,
-                              ),
+                        elevation: 10,
+                        borderRadius: BorderRadius.circular(15),
+                        color: Theme.of(context).colorScheme.background,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(15),
+                          onTap: (() {
+                            FirebaseAuth.instance.signOut();
+                          }),
+                          child: Container(
+                            width: double.infinity,
+                            height: 60,
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
                             ),
-                            const Spacer(),
-                            Icon(
-                              Icons.logout,
-                              color: Colors.red.shade800,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Log out",
+                                  style: TextStyle(
+                                    fontFamily: "Inter",
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 18,
+                                    color: Colors.red.shade800,
+                                  ),
+                                ),
+                                const Spacer(),
+                                Icon(
+                                  Icons.logout,
+                                  color: Colors.red.shade800,
+                                )
+                              ],
+                            ),
+                          ),
+                        )),
                   ],
                 ))));
   }
