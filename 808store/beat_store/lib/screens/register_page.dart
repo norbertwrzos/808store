@@ -16,18 +16,30 @@ class _RegisterPageState extends State<RegisterPage> {
 // text editing controllers
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _passwordConfirmationController = TextEditingController();
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
+    _passwordConfirmationController.dispose();
     super.dispose();
   }
 
   Future signUp() async {
+    if (passwordConfirmed()) {}
     await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim());
+  }
+
+  bool passwordConfirmed() {
+    if (_passwordConfirmationController.text.trim() ==
+        _passwordController.text.trim()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   @override
@@ -71,10 +83,10 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
 
               // Password confirmation texfield
-              // MyTextField(
-              //     controller: _passwordConfirmationController,
-              //     hintText: "Confirm your password",
-              //     obscureText: true),
+              MyTextField(
+                  controller: _passwordConfirmationController,
+                  hintText: "Confirm your password",
+                  obscureText: true),
 
               const SizedBox(
                 height: 30,
