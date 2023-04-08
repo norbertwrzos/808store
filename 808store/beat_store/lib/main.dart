@@ -50,6 +50,13 @@ class MyApp extends StatelessWidget {
                 fontSize: 18,
                 color: Colors.white,
               ),
+
+              headline2: const TextStyle(
+                fontFamily: "Inter",
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
+                color: Colors.white,
+              ),
             ),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: const Color.fromRGBO(188, 98, 255, 1),
