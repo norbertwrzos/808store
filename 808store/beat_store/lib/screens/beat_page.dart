@@ -75,35 +75,41 @@ class BeatPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline2,
                   )),
               const SizedBox(height: 20),
-              Row(
+              Column(
                 children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 170,
-                      child: ListView(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        children: const [
-                          BeatTile(
-                              licenseType: "Basic\nLease",
-                              licenseDescription: "- MP3 file",
-                              beatPrice: "99.99 PLN"),
-                              
-                          BeatTile(
-                              licenseType: "Premium\nLease",
-                              licenseDescription: "- WAV file\n- Stems",
-                              beatPrice: "149.99 PLN"),
-                          BeatTile(
-                              licenseType: "Exclusive\nLicensce",
-                              licenseDescription:
-                                  "- WAV file\n- Stems\n- All yours",
-                              beatPrice: "299.99 PLN"),
-                        ],
-                      ),
+                  Scrollbar(
+                    thumbVisibility: true,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            height: 170,
+                            child: ListView(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              children: const [
+                                BeatTile(
+                                    licenseType: "Basic\nLease",
+                                    licenseDescription: "- MP3 file",
+                                    beatPrice: "99.99 PLN"),
+                                BeatTile(
+                                    licenseType: "Premium\nLease",
+                                    licenseDescription: "- WAV file\n- Stems",
+                                    beatPrice: "149.99 PLN"),
+                                BeatTile(
+                                    licenseType: "Exclusive\nLicensce",
+                                    licenseDescription:
+                                        "- WAV file\n- Stems\n- All yours",
+                                    beatPrice: "299.99 PLN"),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
