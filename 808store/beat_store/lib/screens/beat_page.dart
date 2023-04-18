@@ -77,7 +77,10 @@ class BeatPage extends StatelessWidget {
               const SizedBox(height: 20),
               Column(
                 children: [
-                  Scrollbar(
+                  RawScrollbar(
+                    thumbColor: Theme.of(context).colorScheme.primary,
+                    radius: Radius.circular(15),
+                    thickness: 4,
                     thumbVisibility: true,
                     child: Row(
                       children: [
@@ -108,6 +111,14 @@ class BeatPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 50),
+              Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Comments",
+                    style: Theme.of(context).textTheme.headline2,
+                  )),
+              const SizedBox(height: 20),
                 ],
               ),
             ],
